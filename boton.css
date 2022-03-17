@@ -1,0 +1,34 @@
+/* button{
+    border: 10px solid tomato; /*10px el tamaño del borde y solido*/
+/* } */ 
+.button{
+    /* border: 10px solid lightgreen; */
+    inline-size: 60px; /*tamaño en linea horizontal*/
+    block-size: 32px; /*tamaño en linea vertical*/
+    border: none; /*quitar los bordes*/
+    background-color: transparent; /*fondo del boton transparente*/
+    background-repeat: no-repeat; /*cuando se agragda botones se, repite, con esto dicimos que no haga*/
+    background-position: center; /*para centrar los botones*/
+    cursor: pointer; /*figura la manito cuando estamos encima del boton*/
+
+}
+/*pseudoclase, para transformar boton y ver acción cuando se hace click*/
+.button:active{
+    transform: scale(.9); /*90% de parecido a boton, y 1 es el 100%*/
+}
+/*se adjunta íconos para cada botón ya que tendrá funcionalidad personalizado*/
+#play{
+    /* border: 10px solid tomato; */
+    background-image: url(img/play.svg);
+}
+#pause{
+background-image: url(img/pause.svg);  /*adjuntar íconos*/
+}
+
+#backward{
+background-image:url(img/-10.svg) ; /*retroceder*/
+}
+
+#forward{
+background-image:url(img/+10.svg) ; /*adelantar*/
+}

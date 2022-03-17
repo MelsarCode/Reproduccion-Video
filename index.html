@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="player">
+            <video id="video" src="video/lofi.mp4" width="600px" poster="img/poster.jpg" muted></video>
+                
+            <div class="cubrir-play">
+                <h2 class="play-titulo">Música para Programar</h2>
+                <div class="play-accion">
+                    <!-- Atributo poster, es para colocar miniatura de imagen -->
+                    <!-- Los botones no llevarán nombre simplemente será íconos -->
+                    <!-- aria-label="", atributo que indica que acción realiza cada uno en el nav -->
+                    <!-- title="",Mostrará descripción cuando se pasa el mouse por encima del PW -->
+                    <button class="button" id="backward" aria-label="Retroceder 10 segundos" title="Retroceder 10 segundos"></button> <!--Para atrás-->
+                    <button class="button" id="play" aria-label="Reproducir" title="Reproducir"></button>
+                    <!-- Según figma no se visualiza ícono pausa al inicio para eso vamos usar atributo
+                    hidden, para ocultar-->
+                    <button class="button" id="pause" hidden aria-label="Pausar" title="Pausar"></button>
+                    <button class="button" id="forward" aria-label="Adelantar 10 segundos" title="Adelantar 10 segundos"></button><!--Para adelante-->
+                </div>
+                <!-- contenedor para dar linea de avance del reproductor -->
+                <div class="play-progreso" >
+                    <!-- atribu, min="", value="", step="", dará tiempo y pasos de reproducción
+                    carga metadata-->
+                    <input id="progreso" type="range" min="0" value="0" step="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Archivo JS -->
+    <script src="script.js"></script>
+</body>
+</html>

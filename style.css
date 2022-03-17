@@ -1,0 +1,67 @@
+@import 'boton.css'; /*hoja css dentro de otro hoja css, entre comillas simples, ruta de hoja*/
+
+body{
+    background-color:#26B4BC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper{
+max-inline-size: 900px;/*como máximo debe ampliarse 900px*/
+margin: auto; /*centrar elemento*/
+}
+.player{
+    margin-block-start: 100px;
+    /* border: 10px solid red; */
+    position: relative; /*posición relativo, elemento padre*/
+}
+/* dar tamaño al video */
+.player video{ /*llamando a la clase y luego hijo video*/
+    inline-size: 100%; /*se va ampliar tamaño de video al 100%  */
+    aspect-ratio: 16/9; /*mantener la relación del aspecto*/
+    vertical-align: middle; /*no deja espacio parte inferior*/
+    object-fit: cover;/*expande a la imagen para llenar toda caja*/
+}
+.play-titulo{
+    color: white;
+    position: absolute; /*posicionar elemento*/
+    inset-block-start:0; /*50px desde elemento padre que es .player, eje Y*/
+    inset-inline-start:20px ;/*eje X*/
+} 
+.play-accion{
+    position: absolute; 
+    inset:0; /*Indica que se estere todo el contenedor derec, izq, arri, abajo*/
+    /* inset-block-end: 0; 
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inset-inline-start: 0; 
+    de forma abreviada inset:0; tiene la misma función que los 4 propiedades
+    */
+    /* border: 10px solid orange; */
+    display: flex;
+    justify-content: center; /*justificado contenido a todo el tamaño*/
+    align-items: center; /*centrado*/
+    gap: 20px; /*separa elementos pegados*/
+    /* z-index: 2; cambiamos stack del elemento video para que ejecute primero */   
+}
+/* dar posición y estilo a linea de reproducción */
+.play-progreso{
+    /* background:blue; */
+    position: absolute;
+    inset-block-end: 0; /*expandir todo el cuadro*/
+    inset-inline: 0;
+    display: flex; /*que se flexible este elemento*/
+    padding: 10px;
+}
+.play-progreso input{ /*llamar elemento input que está dentro de div*/
+    flex: 1; /*expandirse todo el display*/
+}
+.cubrir-play{
+    position: absolute;
+    inset: 0;
+    opacity: 0; /*opacidad de la caja*/
+    transition: .3s opacity; /*transición más suave*/
+}
+.player:hover .cubrir-play{
+    /* border: 10px solid tomato; */
+    opacity: 1;
+
+}
